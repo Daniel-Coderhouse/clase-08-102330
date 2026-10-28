@@ -1,0 +1,38 @@
+filter()	Devuelve un nuevo array con los elementos que cumplen una condición	Eliminar productos o filtrar el catálogo
+find()	Devuelve el primer elemento que cumple una condición	Buscar si un producto ya está en el carrito
+some()	Comprueba si al menos un elemento cumple una condición	// true  o false Saber si un producto está en el carrito
+reduce()	Reduce un array a un único valor	Calcular el total del carrito
+includes()	Comprueba si un array o string contiene un valor	Buscar productos por nombre
+
+  const products = [
+    {
+      id: 1,
+      title: "Notebook",
+      price: 1000,
+    },
+    {
+      id: 2,
+      title: "Mouse",
+      price: 50,
+    },
+    {
+      id: 3,
+      title: "Teclado",
+      price: 100,
+    },
+  ];
+
+// filter
+  const filteredProducts = products.filter((product) => product.price < 200); // nos devolvio elementos cuyo precio sea menor a 200
+
+// find
+  const productFind = products.find((product) => product.id === 2); // nos devolvio el elemento con id 2
+
+//  const someProduct = products.some((product) => product.price > 1500); true
+
+
+// reduce
+   const totalSum = products.reduce((acc, product) => acc + product.price, 0);
+
+// includes
+  const includedProduct = products[1].title.toLowerCase().includes("mouse"); 
